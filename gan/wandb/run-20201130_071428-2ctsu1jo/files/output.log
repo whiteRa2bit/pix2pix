@@ -1,10 +1,0 @@
-[32m2020-11-30 07:14:29.874[0m | [1mINFO    [0m | [36mtrainer[0m:[36mtrain[0m:[36m33[0m - [1mEpoch 0 started...[0m
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-Traceback (most recent call last):
-  File "main.py", line 33, in <module>
-    main()
-  File "main.py", line 29, in main
-    trainer.train()
-  File "/datadrive/pafakanov/hse/other/dl/hw3/gan/trainer.py", line 36, in train
-    sketches = sketches.to(config["device"])
-NameError: name 'config' is not defined
