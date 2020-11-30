@@ -1432,3 +1432,98 @@
 2020-11-30 07:46:55,977 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
 2020-11-30 07:46:56,205 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
 2020-11-30 07:46:57,206 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:46:58,206 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:46:59,207 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:00,207 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:01,208 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:02,208 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:03,108 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
+2020-11-30 07:47:03,209 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:04,210 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:05,210 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:06,211 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:07,211 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:08,212 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:09,213 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:09,362 DEBUG   HandlerThread:3941464 [handler.py:handle_request():54] handle_request: status
+2020-11-30 07:47:09,362 DEBUG   SenderThread:3941464 [sender.py:send():88] send: request
+2020-11-30 07:47:09,362 DEBUG   SenderThread:3941464 [sender.py:send_request():97] send_request: status
+2020-11-30 07:47:09,365 DEBUG   SenderThread:3941464 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-11-30 07:47:09,432 DEBUG   SenderThread:3941464 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-11-30 07:47:10,213 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:10,573 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
+2020-11-30 07:47:11,214 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:12,214 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:13,215 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:14,215 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:15,216 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:16,216 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:17,217 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:17,800 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
+2020-11-30 07:47:18,045 DEBUG   Thread-5  :3941464 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/whitera2bit/dl_hse_gan/iqw939yb/file_stream HTTP/1.1" 200 None
+2020-11-30 07:47:18,218 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:19,218 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:20,219 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:21,219 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:22,220 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:23,220 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:24,221 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:24,435 DEBUG   HandlerThread:3941464 [handler.py:handle_request():54] handle_request: status
+2020-11-30 07:47:24,436 DEBUG   SenderThread:3941464 [sender.py:send():88] send: request
+2020-11-30 07:47:24,436 DEBUG   SenderThread:3941464 [sender.py:send_request():97] send_request: status
+2020-11-30 07:47:24,438 DEBUG   SenderThread:3941464 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-11-30 07:47:24,557 DEBUG   SenderThread:3941464 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-11-30 07:47:25,222 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:25,491 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
+2020-11-30 07:47:26,222 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:27,223 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:28,223 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:29,224 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:30,225 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:31,225 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:32,226 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:32,865 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
+2020-11-30 07:47:33,226 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:34,227 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:35,228 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:36,229 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:37,230 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:38,230 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:39,231 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:39,560 DEBUG   HandlerThread:3941464 [handler.py:handle_request():54] handle_request: status
+2020-11-30 07:47:39,561 DEBUG   SenderThread:3941464 [sender.py:send():88] send: request
+2020-11-30 07:47:39,561 DEBUG   SenderThread:3941464 [sender.py:send_request():97] send_request: status
+2020-11-30 07:47:39,564 DEBUG   SenderThread:3941464 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-11-30 07:47:39,641 DEBUG   SenderThread:3941464 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-11-30 07:47:40,231 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:40,372 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
+2020-11-30 07:47:41,232 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:42,233 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:43,233 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:44,234 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:45,235 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:46,235 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:47,236 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:47,862 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
+2020-11-30 07:47:48,236 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:48,900 DEBUG   Thread-5  :3941464 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/whitera2bit/dl_hse_gan/iqw939yb/file_stream HTTP/1.1" 200 None
+2020-11-30 07:47:49,237 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:50,238 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:51,238 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:52,239 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:53,240 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:54,240 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:54,645 DEBUG   HandlerThread:3941464 [handler.py:handle_request():54] handle_request: status
+2020-11-30 07:47:54,646 DEBUG   SenderThread:3941464 [sender.py:send():88] send: request
+2020-11-30 07:47:54,646 DEBUG   SenderThread:3941464 [sender.py:send_request():97] send_request: status
+2020-11-30 07:47:54,649 DEBUG   SenderThread:3941464 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-11-30 07:47:54,740 DEBUG   SenderThread:3941464 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-11-30 07:47:55,241 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:55,603 DEBUG   SenderThread:3941464 [sender.py:send():88] send: stats
+2020-11-30 07:47:56,241 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:57,242 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:58,243 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:47:59,243 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:48:00,244 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:48:01,244 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
+2020-11-30 07:48:02,245 INFO    Thread-8  :3941464 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201130_073217-iqw939yb/files/output.log
