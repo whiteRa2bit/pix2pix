@@ -1,3 +1,0 @@
-2020-11-30 06:29:25.640 | INFO     | __main__:train:26 - Epoch 0 started...
-0it [00:00, ?it/s]Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
-0it [00:04, ?it/s]

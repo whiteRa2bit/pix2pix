@@ -1,4 +1,0 @@
-2020-11-30 06:34:02.493 | INFO     | __main__:train:26 - Epoch 0 started...
-0it [00:00, ?it/s]Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
-1it [00:04,  4.97s/it]2it [00:07,  4.11s/it]3it [00:09,  3.52s/it]4it [00:11,  3.09s/it]5it [00:13,  2.81s/it]6it [00:15,  2.60s/it]7it [00:17,  2.46s/it]8it [00:19,  2.37s/it]9it [00:22,  2.33s/it]10it [00:24,  2.27s/it]Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
-11it [00:29,  3.16s/it]12it [00:31,  2.86s/it]13it [00:33,  2.64s/it]14it [00:35,  2.49s/it]15it [00:38,  2.39s/it]16it [00:40,  2.32s/it]17it [00:42,  2.27s/it]18it [00:44,  2.24s/it]19it [00:46,  2.22s/it]
