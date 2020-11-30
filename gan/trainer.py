@@ -5,6 +5,7 @@ import numpy as np
 
 from config import TRAIN_CONFIG, WANDB_PROJECT, CHECKPOINT_DIR
 
+
 class Trainer:
     def __init__(self, model, optimizer, train_dataloader, val_dataloader, config=TRAIN_CONFIG):
         self.model = model.to(config['device'])
@@ -91,7 +92,7 @@ class Trainer:
         fig = None
 
         return {"loss": loss, "sample_fig": fig}
-    
+
     # @staticmethod
     # def _visualize(sketch, real, output):
     #     fig, ax = plt.subplots(1, 3, figsize=(10, 3))

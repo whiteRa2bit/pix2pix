@@ -4,71 +4,77 @@ import torch
 import torch.nn as nn
 
 
-class UnetSkipConnectionBlock(nn.Module):
-    def __init__(self, outer_nc, inner_nc, in_channels=None,
-                 submodule=None, is_last=False, is_first=False, norm_layer=nn.BatchNorm2d, use_dropout=False):
-        super(UnetSkipConnectionBlock, self).__init__()
+class UnetBlock(nn.Module):
+    def __init__(self, config, out_channels, middle_channels, in_channels=None, submodule=None, is_last=False):
+        super(UnetBlock, self).__init__()
         self.is_last = is_last
-        if type(norm_layer) == functools.partial:
-            use_bias = norm_layer.func == nn.InstanceNorm2d
-        else:
-            use_bias = norm_layer == nn.InstanceNorm2d
-        if in_channels is None:
-            in_channels = outer_nc
-        downconv = nn.Conv2d(in_channels, inner_nc, kernel_size=4,
-                             stride=2, padding=1, bias=use_bias)
+
+        in_channels = in_channels or out_channels
+        downconv = nn.Conv2d(
+            in_channels,
+            middle_channels,
+            kernel_size=config["kernel_size"],
+            stride=config['stride'],
+            padding=config['padding'],
+            bias=False)
+        downnorm = nn.BatchNorm2d(middle_channels)
         downrelu = nn.LeakyReLU(0.2, True)
-        downnorm = norm_layer(inner_nc)
         uprelu = nn.ReLU(True)
-        upnorm = norm_layer(outer_nc)
+        upnorm = nn.BatchNorm2d(out_channels)
 
         if is_last:
-            upconv = nn.ConvTranspose2d(inner_nc * 2, outer_nc,
-                                        kernel_size=4, stride=2,
-                                        padding=1)
-            down = [downconv]
-            up = [uprelu, upconv, nn.Tanh()]
-            model = down + [submodule] + up
-        elif is_first:
-            upconv = nn.ConvTranspose2d(inner_nc, outer_nc,
-                                        kernel_size=4, stride=2,
-                                        padding=1, bias=use_bias)
-            down = [downrelu, downconv]
-            up = [uprelu, upconv, upnorm]
-            model = down + up
+            channels_in = 2 * middle_channels
+            channels_out = out_channels
+            bias = True
+            upconv = self._get_upconv(config, channels_in, channels_out, bias)
+            model = [downconv, submodule, uprelu, upconv, nn.Tanh()]
+        elif not submodule:  # First layer
+            channels_in = middle_channels
+            channels_out = out_channels
+            upconv = self._get_upconv(config, channels_in, channels_out)
+            model = [downrelu, downconv, uprelu, upconv, upnorm]
         else:
-            upconv = nn.ConvTranspose2d(inner_nc * 2, outer_nc,
-                                        kernel_size=4, stride=2,
-                                        padding=1, bias=use_bias)
-            down = [downrelu, downconv, downnorm]
-            up = [uprelu, upconv, upnorm]
-
-            if use_dropout:
-                model = down + [submodule] + up + [nn.Dropout(0.5)]
-            else:
-                model = down + [submodule] + up
+            channels_in = 2 * middle_channels
+            channels_out = out_channels
+            upconv = self._get_upconv(config, channels_in, channels_out)
+            model = [downrelu, downconv, downnorm, submodule, uprelu, upconv, upnorm]
 
         self.model = nn.Sequential(*model)
 
+    @staticmethod
+    def _get_upconv(config, channels_in, channels_out, bias=False):
+        return nn.ConvTranspose2d(
+            channels_in,
+            channels_out,
+            kernel_size=config['kernel_size'],
+            stride=config['stride'],
+            padding=config['padding'],
+            bias=bias)
+
     def forward(self, x):
-        if self.is_last:
-            return self.model(x)
-        else:   # add skip connections
-            return torch.cat([x, self.model(x)], 1)
+        if not self.is_last:
+            result = torch.cat([x, self.model(x)], 1)
+        else:
+            result = self.model(x)
+        return result
 
 
 class UnetGenerator(nn.Module):
-    def __init__(self, in_channels, out_channels, num_downs, ngf=64, norm_layer=nn.BatchNorm2d, use_dropout=False):
+    def __init__(self, config):
         super(UnetGenerator, self).__init__()
-        # construct unet structure
-        unet_block = UnetSkipConnectionBlock(ngf * 8, ngf * 8, in_channels=None, submodule=None, norm_layer=norm_layer, is_first=True)
-        for i in range(num_downs - 5):          # add intermediate layers with ngf * 8 filters
-            unet_block = UnetSkipConnectionBlock(ngf * 8, ngf * 8, in_channels=None, submodule=unet_block, norm_layer=norm_layer, use_dropout=use_dropout)
-        # gradually reduce the number of filters from ngf * 8 to ngf
-        unet_block = UnetSkipConnectionBlock(ngf * 4, ngf * 8, in_channels=None, submodule=unet_block, norm_layer=norm_layer)
-        unet_block = UnetSkipConnectionBlock(ngf * 2, ngf * 4, in_channels=None, submodule=unet_block, norm_layer=norm_layer)
-        unet_block = UnetSkipConnectionBlock(ngf, ngf * 2, in_channels=None, submodule=unet_block, norm_layer=norm_layer)
-        self.model = UnetSkipConnectionBlock(out_channels, ngf, in_channels=in_channels, submodule=unet_block, is_last=True, norm_layer=norm_layer)  # add the is_last layer
+        in_channels = config['in_channels']
+        out_channels = config['out_channels']
+        num_downs = config['num_downs']
+        filters_num = config["filters_num"]
+
+        unet_block = UnetBlock(config, filters_num * 8, filters_num * 8)
+        for i in range(num_downs - 5):
+            unet_block = UnetBlock(config, filters_num * 8, filters_num * 8, submodule=unet_block)
+        unet_block = UnetBlock(config, filters_num * 4, filters_num * 8, submodule=unet_block)
+        unet_block = UnetBlock(config, filters_num * 2, filters_num * 4, submodule=unet_block)
+        unet_block = UnetBlock(config, filters_num, filters_num * 2, submodule=unet_block)
+        self.model = UnetBlock(
+            config, out_channels, filters_num, in_channels=in_channels, submodule=unet_block, is_last=True)
 
     def forward(self, input):
         result = self.model(input)

@@ -1,7 +1,6 @@
 import os
 
-
-_PROJECT_DIR = '.' 
+_PROJECT_DIR = '.'
 DATA_DIR = os.path.join(_PROJECT_DIR, 'edges2shoes')
 TRAIN_DIR = os.path.join(DATA_DIR, 'train')
 VAL_DIR = os.path.join(DATA_DIR, 'val')
@@ -16,8 +15,13 @@ TRAIN_CONFIG = {
     "in_channels": 3,
     "out_channels": 3,
     "num_downs": 7,
+    "filters_num": 64,
+    "kernel_size": 4,
+    "stride": 2,
+    "padding": 1,
     "g_lr": 3e-4,
     "epochs_num": 1,
     "log_each": 50,
-    "device": "cuda"
+    "device": "cuda",
+    "kernel_size": 4
 }

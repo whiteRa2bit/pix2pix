@@ -21,5 +21,5 @@ def download_data(url=DATA_URL, archive_name=_ARCHIVE_NAME):
         data = response.read()
         with open(archive_name, 'wb') as archive:
             archive.write(data)
-    
+
     _extract_tar(archive_name, '.')

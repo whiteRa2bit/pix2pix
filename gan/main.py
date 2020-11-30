@@ -10,6 +10,7 @@ from dataset import ImageDataset
 from model import UnetGenerator
 from trainer import Trainer
 from config import RANDOM_SEED, TRAIN_DIR, VAL_DIR, TRAIN_CONFIG
+
 # from scheduler import get_gpu_id
 
 
@@ -26,13 +27,14 @@ def main(config=TRAIN_CONFIG):
     val_dataset = ImageDataset(VAL_DIR)
     train_dataloader = DataLoader(train_dataset, config['train_batch_size'], True)
     val_dataloader = DataLoader(val_dataset, config['val_batch_size'], True)
-        
-    generator = UnetGenerator(config['in_channels'], config['out_channels'], config['num_downs'])
+
+    generator = UnetGenerator(config)
     optimizer = torch.optim.Adam(generator.parameters(), lr=config['g_lr'])
     trainer = Trainer(generator, optimizer, train_dataloader, val_dataloader, config)
     trainer.train()
 
+
 if __name__ == '__main__':
     _set_seed()
-    # download_data()
+    download_data()
     main()
