@@ -1,0 +1,20 @@
+{
+    "os": "Linux-5.4.0-1031-azure-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.6",
+    "heartbeatAt": "2020-11-30T06:29:25.299962",
+    "startedAt": "2020-11-30T06:29:24.203115",
+    "docker": null,
+    "gpu": "Tesla K80",
+    "gpu_count": 4,
+    "cpu_count": 24,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/home/pafakanov/.local/share/jupyter/runtime/kernel-c9e2ac72-9d27-487a-a562-04481cc384d6.json"
+    ],
+    "state": "running",
+    "program": "<python with no main file>",
+    "host": "lambdagpu",
+    "username": "pafakanov",
+    "executable": "/home/pafakanov/data/anaconda3/bin/python"
+}

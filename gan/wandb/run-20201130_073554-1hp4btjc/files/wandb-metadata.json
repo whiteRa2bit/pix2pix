@@ -1,0 +1,18 @@
+{
+    "os": "Linux-5.4.0-1031-azure-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.6",
+    "heartbeatAt": "2020-11-30T07:35:55.678169",
+    "startedAt": "2020-11-30T07:35:54.515655",
+    "docker": null,
+    "gpu": "Tesla K80",
+    "gpu_count": 4,
+    "cpu_count": 24,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "codePath": "main.py",
+    "program": "main.py",
+    "host": "lambdagpu",
+    "username": "pafakanov",
+    "executable": "/home/pafakanov/data/anaconda3/bin/python"
+}

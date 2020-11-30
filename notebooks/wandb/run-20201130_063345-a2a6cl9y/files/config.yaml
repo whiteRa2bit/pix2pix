@@ -1,0 +1,37 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.10.5
+    framework: torch
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    python_version: 3.7.6
+device:
+  desc: null
+  value: cuda:1
+epochs_num:
+  desc: null
+  value: 1
+g_lr:
+  desc: null
+  value: 0.0003
+in_channels:
+  desc: null
+  value: 3
+log_each:
+  desc: null
+  value: 10
+num_downs:
+  desc: null
+  value: 7
+out_channels:
+  desc: null
+  value: 3
+train_batch_size:
+  desc: null
+  value: 64
+val_batch_size:
+  desc: null
+  value: 64
