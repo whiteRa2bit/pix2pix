@@ -91,7 +91,8 @@ class Discriminator(nn.Module):
         d_depth = config["d_depth"]
         padw = config["padding"]
         sequence = [
-            nn.Conv2d(in_channels, filters_num, kernel_size=kernel_size, stride=2, padding=config["padding"]), nn.LeakyReLU(0.2, True)
+            nn.Conv2d(in_channels, filters_num, kernel_size=kernel_size, stride=2, padding=config["padding"]),
+            nn.LeakyReLU(0.2, True)
         ]
         mult = 1
         mult_prev = 1
@@ -100,7 +101,13 @@ class Discriminator(nn.Module):
             mult_prev = mult
             mult = 2 ** i
             sequence += [
-                nn.Conv2d(filters_num * mult_prev, filters_num * mult, kernel_size=kernel_size, stride=2, padding=config["padding"], bias=False),
+                nn.Conv2d(
+                    filters_num * mult_prev,
+                    filters_num * mult,
+                    kernel_size=kernel_size,
+                    stride=2,
+                    padding=config["padding"],
+                    bias=False),
                 nn.BatchNorm2d(filters_num * mult),
                 nn.LeakyReLU(0.2, True)
             ]
@@ -108,14 +115,18 @@ class Discriminator(nn.Module):
         mult_prev = mult
         mult = 2 ** d_depth
         sequence += [
-            nn.Conv2d(filters_num * mult_prev, filters_num * mult, kernel_size=kernel_size, stride=1, padding=padw, bias=False),
+            nn.Conv2d(
+                filters_num * mult_prev,
+                filters_num * mult,
+                kernel_size=kernel_size,
+                stride=1,
+                padding=padw,
+                bias=False),
             nn.BatchNorm2d(filters_num * mult),
             nn.LeakyReLU(0.2, True)
         ]
 
-        sequence += [
-            nn.Conv2d(filters_num * mult, 1, kernel_size=kernel_size, stride=1, padding=padw)
-        ]
+        sequence += [nn.Conv2d(filters_num * mult, 1, kernel_size=kernel_size, stride=1, padding=padw)]
         self.model = nn.Sequential(*sequence)
 
     def forward(self, input):

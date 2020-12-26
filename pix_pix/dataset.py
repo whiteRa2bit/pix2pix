@@ -23,5 +23,5 @@ class ImageDataset(Dataset):
         gray_img = self.grayscale(img)
         img_tensor = self.to_tensor(img)
         gray_tensor = self.to_tensor(gray_img)
-        
+
         return gray_tensor.float(), img_tensor.float()

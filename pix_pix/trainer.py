@@ -12,9 +12,15 @@ from torch.autograd import Variable, grad
 from pix_pix.config import TRAIN_CONFIG, WANDB_PROJECT, CHECKPOINT_DIR
 
 
-
 class Trainer:
-    def __init__(self, generator, discriminator, g_optimizer, d_optimizer, train_dataloader, val_dataloader, config=TRAIN_CONFIG):
+    def __init__(self,
+                 generator,
+                 discriminator,
+                 g_optimizer,
+                 d_optimizer,
+                 train_dataloader,
+                 val_dataloader,
+                 config=TRAIN_CONFIG):
         self.generator = generator.to(config['device'])
         self.discriminator = discriminator.to(config['device'])
         self.g_optimizer = g_optimizer
@@ -35,7 +41,7 @@ class Trainer:
         self.generator.train()
         self.discriminator.train()
         self._initialize_wandb()
-        
+
         train_g = True
         train_d = False
 
@@ -56,7 +62,7 @@ class Trainer:
                 sketches, real = data
                 sketches = sketches.to(self.config["device"])
                 real = real.to(self.config["device"])
-       
+
                 # Train discriminator
                 if train_d:
                     g_sample = self.generator(sketches)
@@ -70,12 +76,12 @@ class Trainer:
                     self.d_optimizer.step()
 
                     self._reset_grad()
-   
+
                 # Train Generator
                 if (i % self.config['d_coef'] == 0 and train_g) or not train_d:
                     g_sample = self.generator(sketches)
                     d_fake = self.discriminator(g_sample)
-                    
+
                     adv_loss = -torch.mean(d_fake)
                     l1_loss = self.l1_loss(g_sample, real)
                     if train_d:
@@ -88,9 +94,8 @@ class Trainer:
                         g_loss = self.config["l1_weight"] * l1_loss
                     g_loss.backward()
                     self.g_optimizer.step()
-                    
-                    self._reset_grad()
 
+                    self._reset_grad()
 
                 if i % self.config['log_each'] == 0:
                     try:
@@ -137,17 +142,17 @@ class Trainer:
         real = torch.cat(real)
         outputs = torch.cat(outputs)
         loss = self.l1_loss(outputs, real).item()
-        
+
         idx = np.random.choice(len(real))
-        
+
         sketch_sample = sketches[idx]
         real_sample = real[idx]
         output_sample = outputs[idx]
-        
+
         fig = self._visualize(sketch_sample, real_sample, output_sample)
 
         return {"loss": loss, "sample_fig": fig}
-    
+
     @staticmethod
     def _visualize(sketch, real, output):
         fig, ax = plt.subplots(1, 3, figsize=(10, 3))
@@ -166,14 +171,14 @@ class Trainer:
             os.makedirs(checkpoint_dir)
         checkpoint_path = os.path.join(checkpoint_dir, f"{checkpoint_name}.pt")
         torch.save(model.state_dict(), checkpoint_path)
-        
+
     def _reset_grad(self):
         self.generator.zero_grad()
         self.discriminator.zero_grad()
 
     def _compute_gp(self, X, g_sample):
-        alpha = torch.rand((self.config["train_batch_size"], 1,
-                            1, 1)).to(self.config['device'])  # TODO: (@whiteRa2bit, 2020-09-25) Fix shape
+        alpha = torch.rand((self.config["train_batch_size"], 1, 1,
+                            1)).to(self.config['device'])  # TODO: (@whiteRa2bit, 2020-09-25) Fix shape
         x_hat = alpha * X.data + (1 - alpha) * g_sample.data
         x_hat.requires_grad = True
         pred_hat = self.discriminator(x_hat)

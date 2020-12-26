@@ -1,7 +1,6 @@
 import os
 
-
-_PROJECT_DIR = '/home/pafakanov/data/other/dl/hw3/' 
+_PROJECT_DIR = '/home/pafakanov/data/other/dl/hw3/'
 DATA_DIR = os.path.join(_PROJECT_DIR, 'pokemon_jpg')
 WANDB_PROJECT = 'dl_hse_gan'
 CHECKPOINT_DIR = os.path.join(_PROJECT_DIR, 'checkpoints')
