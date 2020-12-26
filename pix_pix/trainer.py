@@ -9,7 +9,7 @@ import numpy as np
 from loguru import logger
 from torch.autograd import Variable, grad
 
-from config import TRAIN_CONFIG, WANDB_PROJECT, CHECKPOINT_DIR
+from pix_pix.config import TRAIN_CONFIG, WANDB_PROJECT, CHECKPOINT_DIR
 
 
 

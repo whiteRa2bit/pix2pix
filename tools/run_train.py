@@ -5,12 +5,12 @@ import torch
 import numpy as np
 from torch.utils.data import DataLoader
 
-from utils import download_data
-from dataset import ImageDataset
-from model import UnetGenerator, Discriminator
-from trainer import Trainer
-from config import RANDOM_SEED, DATA_DIR, TRAIN_CONFIG, TRAIN_FRAC
+from pix_pix.dataset import ImageDataset
+from pix_pix.model import UnetGenerator, Discriminator
+from pix_pix.trainer import Trainer
+from pix_pix.config import RANDOM_SEED, DATA_DIR, TRAIN_CONFIG, TRAIN_FRAC
 
+from utils import download_data
 from scheduler import get_gpu_id
 
 
@@ -23,6 +23,7 @@ def _set_seed(seed=RANDOM_SEED):
 
 
 def main(config=TRAIN_CONFIG):
+    config['device'] = f"cuda:{get_gpu_id()}"
     dataset = ImageDataset(DATA_DIR)
     train_size = int(len(dataset) * TRAIN_FRAC)
     test_size = len(dataset) - train_size
