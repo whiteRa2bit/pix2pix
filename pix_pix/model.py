@@ -3,9 +3,6 @@ import functools
 import torch
 import torch.nn as nn
 
-import torch
-import torch.nn as nn
-
 
 class UnetBlock(nn.Module):
     def __init__(self, config, out_channels, middle_channels, in_channels=None, submodule=None, is_last=False):
