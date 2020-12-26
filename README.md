@@ -27,7 +27,7 @@ To install the package run the following command
 
 ### Coding style tests
 
-YAPF is used for coding style validation
+YAPF (0.22.0) is used for coding style validation
 
     python3 -m yapf -rp . --in-place
 
