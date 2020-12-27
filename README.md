@@ -11,6 +11,9 @@ A detailed task description can be found [here](https://docs.google.com/document
 
   - [Getting Started](#getting-started)
   - [Installing](#installing)
+  - [Data][#data]
+  - [Train][#train]
+  - [Coding style tests](#coding-style-tests)
   - [Authors](#authors)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
@@ -24,6 +27,17 @@ To install the package go to installing notes. All requirements can be found at 
 To install the package run the following command
 
     pip install -e .
+
+### Data
+
+For experiments the following two datasets were used:
+- [Pokemon images dataset](https://www.kaggle.com/kvpratama/pokemon-images-dataset)
+- [Anime faces](https://www.kaggle.com/soumikrakshit/anime-faces)
+
+### Train
+
+To run training modify config file accordingly and run:
+    python tools/run_train.py
 
 ### Coding style tests
 
