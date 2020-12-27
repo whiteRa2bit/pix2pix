@@ -11,8 +11,8 @@ A detailed task description can be found [here](https://docs.google.com/document
 
   - [Getting Started](#getting-started)
   - [Installing](#installing)
-  - [Data][#data]
-  - [Train][#train]
+  - [Data](#data)
+  - [Train](#train)
   - [Coding style tests](#coding-style-tests)
   - [Authors](#authors)
   - [License](#license)
@@ -22,24 +22,26 @@ A detailed task description can be found [here](https://docs.google.com/document
 
 To install the package go to installing notes. All requirements can be found at setup.py
 
-### Installing
+## Installing
 
 To install the package run the following command
 
     pip install -e .
 
-### Data
+## Data
 
 For experiments the following two datasets were used:
 - [Pokemon images dataset](https://www.kaggle.com/kvpratama/pokemon-images-dataset)
 - [Anime faces](https://www.kaggle.com/soumikrakshit/anime-faces)
 
-### Train
+## Train
 
-To run training modify config file accordingly and run:
-    python tools/run_train.py
+To run training modify config file accordingly and run
 
-### Coding style tests
+    cd tools
+    python run_train.py
+
+## Coding style tests
 
 YAPF (0.22.0) is used for coding style validation
 
