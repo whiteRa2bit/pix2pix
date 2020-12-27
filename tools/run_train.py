@@ -22,7 +22,7 @@ def _set_seed(seed=RANDOM_SEED):
     random.seed(seed)
 
 
-def main(config=TRAIN_CONFIG):
+def run_train(config=TRAIN_CONFIG):
     config['device'] = f"cuda:{get_gpu_id()}"
     dataset = ImageDataset(DATA_DIR)
     train_size = int(len(dataset) * TRAIN_FRAC)
@@ -43,4 +43,4 @@ def main(config=TRAIN_CONFIG):
 if __name__ == '__main__':
     _set_seed()
     # download_data()
-    main()
+    run_train()
