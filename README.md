@@ -1,4 +1,4 @@
-# PIX_PIX
+# PIX2PIX
 
 Image-to-Image Translation with Conditional Adversarial Networks
 
@@ -6,6 +6,11 @@ One of the homeworks as part of Deep Learning Course at Higher School of Economi
 A detailed task description can be found [here](https://docs.google.com/document/d/1IW--VvxmLI6enh5yYPQganIQfQ1loXATbn8x0liLD9o).
 
 **Experiments report** can be found at [docs folder](docs/report.pdf)
+
+## Examples
+
+![Anime dataset example](docs/anime_example.png)
+![Pokemon dataset example](docs/pokemon_example.png)
 
 ## Summary
 
